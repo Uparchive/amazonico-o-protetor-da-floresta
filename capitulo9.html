@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 9</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "amazonico-o-protetor-da-floresta";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "defaultBook";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="amazonico-o-protetor-da-floresta">
+    <!-- Identificação do capítulo com classe "capitulo" e id "capitulo9" -->
+    <div class="container capitulo" id="capitulo9">
+        <h1 class="chapter-number">Capítulo 9</h1>
+        <h2 class="chapter-title">A Revelação da Árvore</h2>
+        <p>Elias e <b>Yara</b> atravessaram o portal e ficaram sem palavras ao ver a majestosa Árvore da Vida. Ela era maior do que qualquer coisa que Elias já tinha visto, e sua presença emanava uma energia tão poderosa que fazia seus joelhos tremerem.</p>
+        <p>"Essa é a fonte de tudo," disse Yara, em um sussurro reverente. "A Árvore da Vida conecta todos os seres da floresta. É o coração que mantém o equilíbrio."</p>
+        <p>Elias deu alguns passos à frente, sentindo a energia pulsar ao seu redor. Quando tocou uma das raízes, uma luz intensa envolveu tudo. Sua mente foi inundada por visões — imagens da floresta em seu auge, repleta de vida, mas também vislumbres de destruição e caos trazidos por forças externas.</p>
+        <p>Uma voz profunda e antiga ecoou dentro de sua mente: "<b>Elias, Protetor, você chegou até aqui, mas a batalha está apenas começando. O equilíbrio está prestes a ser rompido por uma força que deseja consumir tudo o que esta Árvore representa.</b>"</p>
+        <p>"Quem é essa força?" perguntou Elias, tentando compreender o que via.</p>
+        <p>A voz continuou: "<b>O encapuzado que você enfrentou é apenas um peão. A verdadeira ameaça é um espírito antigo e corrupto, conhecido como <b>Malakar</b>. Ele deseja absorver o poder da Árvore da Vida para espalhar destruição sem fim.</b>"</p>
+        <p>Yara, que também parecia ouvir a voz, se aproximou. "Como podemos detê-lo?"</p>
+        <p>"Vocês não podem fazer isso sozinhos," respondeu a voz. "<b>Elias, você deve se conectar completamente à Árvore. Deixe que ela revele a força que está adormecida dentro de você. Mas saiba disso: o custo será alto."</b>"</p>
+        <p>Elias sentiu um calafrio. "Que custo?"</p>
+        <p>"Sua conexão com a Árvore da Vida é única," explicou a voz. "Para enfrentá-lo, você deve sacrificar algo precioso. Apenas o verdadeiro Protetor pode tomar essa decisão."</p>
+        <p>Elias olhou para Yara e depois para a Árvore. Ele sabia que o tempo estava se esgotando, e as vidas de todos na floresta dependiam dele.</p>
+        <p>Determinado, ele colocou ambas as mãos no tronco da Árvore. A luz ao seu redor brilhou ainda mais, e ele sentiu uma onda de energia atravessá-lo, revelando o próximo passo de sua jornada: enfrentar Malakar em uma batalha final que decidiria o destino de tudo.</p>
+        <p>"Eu estou pronto," disse Elias, com firmeza. "Eu farei o que for necessário."</p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo8.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo10.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 10</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "amazonico-o-protetor-da-floresta";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "defaultBook";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="amazonico-o-protetor-da-floresta">
+    <!-- Identificação do capítulo com classe "capitulo" e id "capitulo10" -->
+    <div class="container capitulo" id="capitulo10">
+        <h1 class="chapter-number">Capítulo 10</h1>
+        <h2 class="chapter-title">O Desafio de Malakar</h2>
+        <p>Ao tocar o tronco da Árvore da Vida, Elias sentiu uma conexão indescritível. Ele não estava apenas ouvindo a floresta — ele era a floresta. Cada raiz, folha e gota de água pulsava em seu ser. E com essa conexão veio uma visão: Malakar, uma figura imponente com olhos brilhantes como fogo, estava se aproximando, sua presença distorcendo o ar ao redor.</p>
+        <p>Yara observava preocupada. "Elias, você está bem?"</p>
+        <p>Antes que ele pudesse responder, o céu acima escureceu. Uma risada profunda ecoou pela floresta, como se o próprio mundo estivesse rindo. E então ele apareceu — Malakar, envolto em uma aura negra que parecia sugar toda a luz ao redor. Sua armadura era feita de um material semelhante a obsidiana, refletindo as sombras da floresta.</p>
+        <p>"Finalmente nos encontramos, Protetor," disse Malakar, sua voz ecoando como trovões distantes. "Por eras, a Árvore da Vida manteve o equilíbrio, mas isso termina agora."</p>
+        <p>Elias deu um passo à frente, sua postura firme. "Eu não deixarei você destruir tudo o que a floresta representa."</p>
+        <p>Malakar abriu um sorriso sombrio. "Você fala como todos os outros que falharam antes de você. Mas veremos se é digno de carregar esse título."</p>
+        <p>Com um movimento rápido, Malakar ergueu as mãos, e do chão surgiram criaturas deformadas, feitas de raízes retorcidas e pedras. Elas avançaram em direção a Elias, mas ele estava pronto. Canalizando a energia da Árvore, ele invocou vinhas brilhantes que enfrentaram as criaturas com ferocidade.</p>
+        <p>A batalha foi intensa. Cada ataque de Malakar parecia mais forte, como se ele estivesse drenando energia da própria floresta. Yara usava seus poderes sobre as águas para manter as criaturas à distância, mas elas pareciam intermináveis.</p>
+        <p>"Elias, ele está tentando desestabilizar a Árvore da Vida!" gritou Yara. "Você precisa detê-lo agora!"</p>
+        <p>Elias fechou os olhos, ignorando o caos ao seu redor. Ele sentiu a Árvore sussurrar em sua mente: "<b>Elias, lembre-se de que o equilíbrio não é sobre força, mas sobre harmonia. Use a floresta como um todo.</b>"</p>
+        <p>Ele abriu os olhos, agora brilhando com uma luz verde intensa. Com um movimento, ele chamou não apenas vinhas, mas o vento, as águas e até os animais da floresta. Juntos, eles criaram uma força imensa que empurrou Malakar para trás.</p>
+        <p>Malakar rugiu, sua aura se fragmentando. "Isso não acabou, Protetor! Eu voltarei, e quando o fizer, nada poderá me deter!" Com isso, ele desapareceu em uma explosão de sombras, deixando a floresta em silêncio.</p>
+        <p>Elias caiu de joelhos, exausto. Yara se aproximou, colocando uma mão em seu ombro. "Você conseguiu. Por enquanto."</p>
+        <p>A voz da Árvore ecoou novamente: "<b>Malakar foi repelido, mas não destruído. Você deve se preparar, Elias, pois o verdadeiro teste ainda está por vir.</b>"</p>
+        <p>Elias assentiu, determinado. Ele sabia que a luta pelo equilíbrio da floresta estava longe de terminar.</p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo9.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('continua.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>

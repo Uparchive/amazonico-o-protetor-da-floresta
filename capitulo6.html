@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 6</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "amazonico-o-protetor-da-floresta";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "defaultBook";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="amazonico-o-protetor-da-floresta">
+    <!-- Identificação do capítulo com classe "capitulo" e id "capitulo6" -->
+    <div class="container capitulo" id="capitulo6">
+        <h1 class="chapter-number">Capítulo 6</h1>
+        <h2 class="chapter-title">O Guardião das Águas</h2>
+        <p>A luz do dia começava a enfraquecer enquanto Elias e <b>Yara</b> continuavam sua jornada. A floresta ao redor parecia viva, mas também havia um silêncio inquietante que fazia os dois ficarem atentos a cada movimento.</p>
+        <p>“Estamos entrando no território das Águas Profundas,” explicou Yara. “Esse lugar é protegido por uma antiga entidade, o <b>Guardião das Águas</b>. Ele não confia facilmente em ninguém, nem mesmo em mim.”</p>
+        <p>Elias sentiu um frio percorrer sua espinha. “E o que ele faz se não confiar em nós?”</p>
+        <p>Yara deu um sorriso enigmático. “Você não vai querer descobrir.”</p>
+        <p>Antes que Elias pudesse responder, o som de água corrente ficou mais alto. Um rio largo surgiu à frente, suas águas brilhando com um azul profundo que parecia quase mágico. No centro do rio, uma figura imponente começou a emergir. Era um homem alto, com pele reluzente como a superfície da água e olhos brilhantes como safiras. Ele segurava uma lança feita de coral e seu olhar parecia penetrar a alma de Elias.</p>
+        <p>“Quem ousa atravessar meu território?” A voz do <b>Guardião das Águas</b> era grave e poderosa, ecoando como o trovão.</p>
+        <p>Elias deu um passo à frente, tentando manter a compostura. “Meu nome é Elias, o Protetor da Floresta. Estou em uma missão para alcançar a Árvore da Vida e restaurar o equilíbrio perdido.”</p>
+        <p>O guardião ergueu uma sobrancelha. “Protetor? Já ouvi muitos se proclamarem dignos desse título. Prove que você é merecedor.”</p>
+        <p>Antes que Elias pudesse reagir, o guardião ergueu sua lança e a água do rio começou a se agitar. Um redemoinho gigante surgiu, e dele emergiram criaturas feitas de água, avançando em direção a Elias e Yara.</p>
+        <p>“Use o que a floresta te deu!” gritou Yara, desviando de uma criatura que se atirava contra ela.</p>
+        <p>Elias fechou os olhos, sentindo a conexão com as árvores e raízes ao redor. Ele estendeu as mãos e vinhas brotaram do solo, entrelaçando-se com as criaturas de água, neutralizando seus ataques. Mas o guardião não parecia impressionado.</p>
+        <p>“Não basta defender, Protetor,” disse ele. “Você deve entender o fluxo da natureza, não lutar contra ele.”</p>
+        <p>Elias respirou fundo, tentando sentir o ritmo do rio. Ele percebeu que as criaturas não eram inimigas, mas parte do teste. Em vez de combatê-las, ele guiou as vinhas para formar pontes sobre o rio, permitindo que as criaturas fluíssem livremente de volta ao redemoinho. Aos poucos, a água se acalmou.</p>
+        <p>O guardião observou em silêncio. Então, ele sorriu levemente. “Você aprendeu rápido, Protetor. A força sem harmonia não é nada. Você pode atravessar meu território, mas saiba disso: sua maior prova ainda está por vir.”</p>
+        <p>Elias agradeceu e, junto com Yara, cruzou o rio. Apesar do cansaço, ele sentiu que estava um passo mais perto da Árvore da Vida e do destino que o aguardava.</p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo5.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo7.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>

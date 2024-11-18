@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 5</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "amazonico-o-protetor-da-floresta";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "defaultBook";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="amazonico-o-protetor-da-floresta">
+    <!-- Identificação do capítulo com classe "capitulo" e id "capitulo5" -->
+    <div class="container capitulo" id="capitulo5">
+        <h1 class="chapter-number">Capítulo 5</h1>
+        <h2 class="chapter-title">O Caminho para a Árvore da Vida</h2>
+        <p>Elias ajustou sua mochila enquanto olhava para o horizonte coberto de árvores. O sol começava a se pôr, lançando tons dourados sobre a floresta. Ao seu lado, <b>Yara</b> caminhava em silêncio, guiando-o por uma trilha desconhecida. Os jaguatiricas os seguiam de perto, como sombras fiéis.</p>
+        <p>"A Árvore da Vida não é apenas um lugar," explicou Yara. "Ela é o coração pulsante da floresta, a fonte de sua energia. Mas chegar até ela não será fácil. O caminho está protegido por forças que testam sua determinação."</p>
+        <p>Elias não respondeu. Sua mente ainda estava sobrecarregada pela batalha anterior e pelas palavras da voz da floresta. Ele sentia o peso da responsabilidade crescendo a cada passo, mas também sabia que não podia desistir.</p>
+        <p>Depois de horas caminhando, eles chegaram a um vale envolto em névoa espessa. O ar parecia mais pesado, e o silêncio era interrompido apenas pelo som ocasional de folhas sendo agitadas pelo vento. "Estamos perto," disse Yara. "Mas precisamos estar atentos."</p>
+        <p>De repente, a névoa se agitou, tomando forma diante deles. Criaturas feitas de fumaça e sombras emergiram, bloqueando o caminho. Seus olhos brilhavam com um vermelho ameaçador, e Elias sentiu sua energia instintivamente reagir.</p>
+        <p>"Esses são os Guardiões do Vale," explicou Yara. "Eles testarão sua coragem e sua conexão com a floresta. Mostre a eles quem você é."</p>
+        <p>Elias avançou com cautela. Ele fechou os olhos e se concentrou, sentindo as raízes sob seus pés e o sussurro das árvores ao seu redor. Quando abriu os olhos, sua pele brilhava com um tom verde suave. Ele estendeu as mãos e as raízes emergiram, formando um círculo ao redor dele e de Yara.</p>
+        <p>Os Guardiões hesitaram, mas não recuaram. Elias percebeu que precisava fazer mais do que se defender. Ele falou alto, sua voz firme: "<b>Eu sou Elias, o Protetor da Floresta. Estou aqui para restaurar o equilíbrio e proteger a Árvore da Vida. Se vocês guardam este caminho, então confiem em mim para cumprir minha missão.</b>"</p>
+        <p>As criaturas ficaram imóveis. Por um momento, o tempo pareceu parar. Então, uma delas avançou e curvou a cabeça, como se reconhecesse Elias. A névoa começou a se dissipar, e o caminho se abriu diante deles.</p>
+        <p>"Você passou no teste," disse Yara com um sorriso. "Mas essa foi apenas a primeira prova. A Árvore da Vida ainda está longe, e os desafios só ficarão mais difíceis."</p>
+        <p>Elias respirou fundo, mas havia uma nova determinação em seus olhos. Ele sabia que o destino da floresta estava em suas mãos, e não importava o que enfrentasse, ele continuaria.</p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo4.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo6.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>

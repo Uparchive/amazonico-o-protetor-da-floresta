@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 2</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "amazonico-o-protetor-da-floresta";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "defaultBook";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="amazonico-o-protetor-da-floresta">
+    <!-- Identificação do capítulo com classe "capitulo" e id "capitulo2" -->
+    <div class="container capitulo" id="capitulo2">
+        <h1 class="chapter-number">Capítulo 2</h1>
+        <h2 class="chapter-title">A Voz da Floresta</h2>
+        <p>A manhã seguinte trouxe um novo peso para os ombros de <b>Elias</b>. Enquanto a aldeia de <b>Iaraçu</b> despertava lentamente, ele sentiu algo que nunca havia experimentado antes: um sussurro constante em sua mente, como se as árvores e o rio estivessem tentando se comunicar.</p>
+        <p>Ele caminhou até a margem do rio, onde a água parecia brilhar com um verde suave. Ao tocar a superfície, uma onda de energia percorreu seu corpo, e uma voz ecoou dentro de sua cabeça: "<b>Elias, o tempo está contra nós. O equilíbrio da floresta está em suas mãos.</b>"</p>
+        <p>Atordoado, ele recuou, mas a voz continuou: "<b>Siga a trilha da antiga cachoeira. Lá você encontrará a chave para compreender seus poderes.</b>"</p>
+        <p>Sem saber exatamente o que fazer, Elias procurou seu avô. "Vô, o que está acontecendo comigo? Eu... eu ouvi a floresta!"</p>
+        <p>O velho homem sorriu, como se já esperasse por isso. "A floresta está viva, Elias. Ela se comunica com aqueles que a protegem. Você deve ouvir e seguir o que ela diz. Mas cuidado, há forças que farão de tudo para silenciá-la."</p>
+        <p>Determinando-se a seguir o chamado, Elias reuniu uma pequena bolsa com ervas e água e partiu em direção à trilha mencionada. O caminho era estreito, coberto por vinhas e raízes que pareciam se mover levemente, guiando-o na direção certa. Ele sentiu que cada passo o conectava mais profundamente com a floresta.</p>
+        <p>Ao chegar à antiga cachoeira, ele encontrou algo que jamais esperava: um altar coberto por símbolos antigos. No centro, uma pedra brilhava com o mesmo verde que ele vira no rio. Quando ele a tocou, visões inundaram sua mente — imagens de destruição, máquinas avançando pela floresta e uma figura encapuzada liderando a devastação.</p>
+        <p>Quando as visões desapareceram, a voz da floresta retornou: "<b>Essa é sua primeira prova, Elias. Proteja o coração da floresta antes que seja tarde demais.</b>"</p>
+        <p>Agora ele sabia que estava em uma corrida contra o tempo. O destino da Amazônia dependia dele.</p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo1.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo3.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>

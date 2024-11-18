@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 3</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "amazonico-o-protetor-da-floresta";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "defaultBook";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="amazonico-o-protetor-da-floresta">
+    <!-- Identificação do capítulo com classe "capitulo" e id "capitulo3" -->
+    <div class="container capitulo" id="capitulo3">
+        <h1 class="chapter-number">Capítulo 3</h1>
+        <h2 class="chapter-title">A Primeira Prova</h2>
+        <p>O som da água caindo da antiga cachoeira ecoava como um canto ancestral, carregando memórias de tempos que Elias mal podia compreender. A pedra em suas mãos pulsava com uma energia viva, e ele sabia que aquilo era mais do que um simples artefato. Era um elo com o coração da floresta.</p>
+        <p>De repente, o chão tremeu. O som de motores se aproximando rompeu a tranquilidade do lugar. Elias rapidamente se escondeu atrás de uma árvore gigante e observou com horror enquanto máquinas avançavam pela trilha, derrubando tudo em seu caminho.</p>
+        <p>Uma figura alta e encapuzada liderava o grupo, sua presença irradiando um poder sombrio. Elias sentiu um calafrio percorrer seu corpo. Era o mesmo homem que ele tinha visto nas visões, o símbolo da destruição iminente.</p>
+        <p>A voz da floresta sussurrou em sua mente: "<b>Elias, agora é o momento. Prove que você é digno de ser o Protetor. Use o poder que lhe foi concedido.</b>"</p>
+        <p>Elias fechou os olhos, sentindo a energia da pedra fluir por suas veias. Quando abriu as mãos, raízes saíram do chão como serpentes vivas, bloqueando o avanço das máquinas. O líder encapuzado ergueu a mão, e uma onda de energia negra dissipou as raízes, mas Elias não desistiu.</p>
+        <p>"Quem é você?" gritou Elias, saindo de seu esconderijo.</p>
+        <p>O homem encapuzado riu, uma risada fria e vazia. "Eu sou apenas o início, garoto. A floresta não pode me deter. E você... não está pronto para o que está por vir."</p>
+        <p>Elias não hesitou. Ele concentrou sua energia, e um muro de vinhas cresceu ao redor da cachoeira, protegendo o altar e o coração da floresta. A batalha foi intensa, mas os invasores recuaram momentaneamente.</p>
+        <p>Enquanto a poeira assentava, Elias caiu de joelhos, exausto. A voz da floresta falou novamente: "<b>Você provou sua coragem, Elias. Mas essa é apenas a primeira batalha. Prepare-se, pois o verdadeiro desafio ainda está por vir.</b>"</p>
+        <p>Respirando fundo, Elias levantou-se. Ele sabia que não podia parar. A floresta precisava dele, e ele estava disposto a proteger cada folha e cada ser vivo, não importa o custo.</p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo2.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo4.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>

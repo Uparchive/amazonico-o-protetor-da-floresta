@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 1</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "amazonico-o-protetor-da-floresta";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "defaultBook";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="amazonico-o-protetor-da-floresta">
+    <!-- Identificação do capítulo com classe "capitulo" e id "capitulo1" -->
+    <div class="container capitulo" id="capitulo1">
+        <h1 class="chapter-number">Capítulo 1</h1>
+        <h2 class="chapter-title">As Raízes do Destino</h2>
+        <p>O dia começou como qualquer outro na aldeia de <b>Iaraçu</b>, escondida nas profundezas da floresta amazônica. O som das araras preenchia o ar, enquanto o rio serpenteava, refletindo o brilho suave do sol nascente. Para <b>Elias</b>, um jovem aprendiz de curandeiro, aquele era mais um dia de treinos e histórias com seu avô, o ancião e protetor dos segredos da floresta.</p>
+        <p>"<b>Elias</b>," chamou o avô, sua voz rouca, mas cheia de autoridade, "há algo que você precisa ver hoje."</p>
+        <p>Sem entender, mas curioso, <b>Elias</b> seguiu o avô até um local que ele nunca havia visitado. Lá, no centro de uma pequena clareira, estava uma árvore gigantesca com um tronco retorcido que parecia pulsar com uma energia verde suave. "Esta é a <b>Árvore Ancestral</b>," disse o avô. "Ela está morrendo."</p>
+        <p><b>Elias</b> arregalou os olhos. "Como pode? Ela é a fonte de vida para a floresta!"</p>
+        <p>O ancião assentiu lentamente. "Há forças além do que você conhece. Elas estão avançando, destruindo o que sustentamos por gerações. Mas a floresta escolheu um protetor. E, para minha surpresa, ela escolheu você."</p>
+        <p>Antes que <b>Elias</b> pudesse reagir, a árvore emitiu um brilho intenso. Raízes saíram do chão e envolveram o jovem em uma espiral de luz. Sua mente foi inundada por visões da floresta sendo devastada, animais fugindo e rios secando. Mas junto a isso, ele sentiu um poder profundo e ancestral fluindo por suas veias.</p>
+        <p>Quando a luz desapareceu, <b>Elias</b> estava diferente. Sua pele parecia brilhar levemente sob a luz do sol, e ele podia ouvir o murmúrio das folhas, como se a floresta sussurrasse diretamente para ele. O avô sorriu, uma mistura de orgulho e tristeza. "Você agora é o protetor, <b>Elias</b>. A floresta está em suas mãos."</p>
+        <p>Atordoado, mas determinado, <b>Elias</b> sabia que sua vida mudara para sempre. Ele ainda não entendia completamente o que significava ser o protetor, mas uma coisa era certa: ele precisava proteger a floresta, custasse o que custasse.</p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo0.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo2.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>

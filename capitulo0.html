@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introdução</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "amazonico-o-protetor-da-floresta";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "defaultBook";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="amazonico-o-protetor-da-floresta">
+    <!-- Identificação do capítulo com classe "capitulo" e id "introducao" -->
+    <div class="container capitulo" id="introducao">
+        <img src="amazônico-poster.png" alt="Capa de Amazônico" class="book-cover">
+        <h1 class="chapter-number">Introdução</h1>
+        <h2 class="chapter-title">Amazônico: O Protetor da Floresta</h2>
+        <p>No coração da floresta amazônica, onde o tempo parece ter parado, existe uma energia antiga que sustenta toda a vida. Não é vista pelos olhos comuns, mas sentida em cada folha, em cada gota de chuva e no vento que atravessa as copas das árvores.</p>
+        <p>Por séculos, histórias sobre um guardião escolhido pela floresta foram contadas em sussurros. Ele é mais do que um protetor; é a ponte entre a natureza e a humanidade, a última linha de defesa contra aqueles que ameaçam desequilibrar o mundo natural.</p>
+        <p>Agora, a floresta clama por ajuda mais uma vez. Os sinais de sua dor estão por toda parte: árvores tombadas, rios poluídos, animais que desaparecem em silêncio. E em meio a essa agonia, um jovem é chamado, não por sua força, mas por sua conexão com a essência da vida.</p>
+        <p>Esta é a história de <b>Amazônico</b>, o Protetor da Floresta. Um relato de coragem, de escolhas impossíveis e de um legado que transcende o tempo. O chamado foi feito, e a jornada começa agora.</p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('index.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo1.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>

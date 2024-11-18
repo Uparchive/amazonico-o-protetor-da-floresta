@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 4</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "amazonico-o-protetor-da-floresta";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "defaultBook";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="amazonico-o-protetor-da-floresta">
+    <!-- Identificação do capítulo com classe "capitulo" e id "capitulo4" -->
+    <div class="container capitulo" id="capitulo4">
+        <h1 class="chapter-number">Capítulo 4</h1>
+        <h2 class="chapter-title">Aliados da Floresta</h2>
+        <p>O som dos passos de Elias ecoava pelo chão úmido da floresta enquanto ele retornava à aldeia de <b>Iaraçu</b>. O peso da batalha recente ainda estava presente em seus ombros, mas algo mais o preocupava: a figura encapuzada. Quem era ele? E como ele possuía um poder tão destrutivo?</p>
+        <p>Ao se aproximar da aldeia, Elias ouviu um grito. Ele correu em direção ao som e encontrou um grupo de pessoas da aldeia cercadas por jaguatiricas. Mas algo estava errado. Os animais não estavam atacando; eles pareciam estar protegendo algo. </p>
+        <p>Com cautela, Elias avançou. Ele estendeu as mãos e sussurrou para a floresta, tentando se conectar com os animais. Um dos jaguatiricas olhou para ele e, para sua surpresa, falou: "<b>Protetor, nós estávamos esperando por você.</b>"</p>
+        <p>Elias ficou surpreso. "Esperando por mim? Como assim? O que está acontecendo?"</p>
+        <p>A jaguatirica explicou que, desde o surgimento da ameaça, a floresta havia reunido seus aliados naturais para apoiar o Protetor. "Nós somos seus olhos e ouvidos, Elias. A floresta está conectada a nós, assim como está conectada a você."</p>
+        <p>Antes que Elias pudesse responder, uma jovem apareceu entre as árvores. Seu cabelo negro caía em cascatas sobre os ombros, e seus olhos brilhavam como a luz da lua. "Meu nome é <b>Yara</b>", disse ela. "Sou a guardiã dos rios e fui enviada para ajudá-lo."</p>
+        <p>Elias ficou desconfiado, mas Yara continuou: "O homem que você enfrentou não é apenas um invasor. Ele é uma sombra, uma força criada pelo desequilíbrio da natureza. Você não pode lutar contra ele sozinho."</p>
+        <p>Com a ajuda de Yara e dos jaguatiricas, Elias começou a entender que sua missão era maior do que proteger a floresta. Ele precisava reunir todos os aliados possíveis para enfrentar a crescente ameaça.</p>
+        <p>"Elias," disse Yara, "há um lugar que você precisa visitar. É chamado de <b>Árvore da Vida</b>. Lá você encontrará respostas... e talvez, o poder para derrotar a sombra."</p>
+        <p>Elias assentiu. Ele sabia que o caminho seria perigoso, mas também sabia que não podia falhar. A floresta dependia dele, e agora ele tinha aliados ao seu lado.</p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo3.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo5.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>

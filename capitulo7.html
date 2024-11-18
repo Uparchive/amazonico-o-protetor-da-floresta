@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 7</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "amazonico-o-protetor-da-floresta";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "defaultBook";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="amazonico-o-protetor-da-floresta">
+    <!-- Identificação do capítulo com classe "capitulo" e id "capitulo7" -->
+    <div class="container capitulo" id="capitulo7">
+        <h1 class="chapter-number">Capítulo 7</h1>
+        <h2 class="chapter-title">O Labirinto das Sombras</h2>
+        <p>Após atravessar o território do <b>Guardião das Águas</b>, Elias e Yara chegaram a uma área da floresta que parecia abandonada. As árvores eram altas e densas, mas havia algo de estranho no ar. Um frio percorreu a espinha de Elias, e ele sentiu a presença de algo invisível.</p>
+        <p>“Esse é o <b>Labirinto das Sombras</b>,” disse Yara, sua voz baixa e séria. “É uma passagem antiga que protege a Árvore da Vida. Muitos que entraram aqui nunca mais saíram.”</p>
+        <p>Elias olhou para a densa escuridão entre as árvores. “Temos escolha?”</p>
+        <p>“Não,” respondeu Yara. “Mas cuidado. As Sombras se alimentam do medo. Quanto mais você duvidar de si mesmo, mais forte elas se tornam.”</p>
+        <p>Determinado, Elias respirou fundo e deu o primeiro passo. A escuridão parecia engoli-los, e o ar ficou pesado. O som da floresta desapareceu, substituído por um silêncio opressor. Elias sentiu uma mão gelada tocar seu ombro, mas quando se virou, não havia nada ali.</p>
+        <p>“Protetor,” uma voz suave sussurrou. “Você não é forte o suficiente. Por que tentar salvar algo que já está perdido?”</p>
+        <p>Elias parou. Ele sabia que as Sombras estavam tentando manipulá-lo. Ele fechou os olhos, concentrando-se na energia da floresta. “Eu sou o Protetor. A floresta confia em mim, e eu confio nela.”</p>
+        <p>A escuridão ao seu redor pareceu vacilar, mas então a voz voltou, mais forte. “Você não pode lutar contra nós. Sua missão é inútil. O equilíbrio já foi quebrado.”</p>
+        <p>De repente, Yara gritou. Elias abriu os olhos e a viu presa em uma teia negra, que se apertava ao redor dela. Sem pensar, ele correu em sua direção, mas a teia parecia se mover sozinha, bloqueando seu caminho.</p>
+        <p>“Protetor,” a voz das Sombras ecoou, “sacrifique sua força e ela será libertada.”</p>
+        <p>Elias hesitou. Ele sabia que não podia ceder, mas também não podia deixar Yara sofrer. Ele fechou os olhos novamente, buscando uma solução. Então, ele ouviu o sussurro da floresta em sua mente: "<b>Confie na luz dentro de você.</b>"</p>
+        <p>Com um grito, Elias ergueu as mãos. Sua energia brilhou com intensidade, e uma luz verde irradiou de seu corpo. A escuridão ao redor começou a recuar, e a teia que prendia Yara se desfez.</p>
+        <p>“Você conseguiu,” disse Yara, ofegante. “As Sombras só podem ser derrotadas pela crença no equilíbrio. Você é mais forte do que pensa, Elias.”</p>
+        <p>Enquanto o labirinto se dissipava, uma nova trilha apareceu à frente. Elias sabia que o pior ainda estava por vir, mas também sabia que estava mais próximo da Árvore da Vida — e de enfrentar o verdadeiro inimigo.</p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo6.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo8.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>
