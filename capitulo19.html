@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 19</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "amazonico-o-protetor-da-floresta";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "defaultBook";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="amazonico-o-protetor-da-floresta">
+    <!-- Identificação do capítulo com classe "capitulo" e id "capitulo19" -->
+    <div class="container capitulo" id="capitulo19">
+        <h1 class="chapter-number">Capítulo 19</h1>
+        <h2 class="chapter-title">O Silêncio Após a Tempestade</h2>
+        <p>O vale estava silencioso, a escuridão que antes dominava o Coração das Sombras havia desaparecido. Elias se levantou lentamente, sentindo o peso da batalha em cada músculo de seu corpo. As palavras de Malakar ainda ecoavam em sua mente: "<b>Você não pode vencer.</b>"</p>
+        <p>Yara correu até ele, apoiando-o enquanto ele cambaleava. "Você conseguiu, Elias. Ele se foi."</p>
+        <p>Os Espíritos Ancestrais apareceram ao redor de Elias, suas formas brilhando com luz suave. O Espírito da Água falou primeiro: "Você enfrentou as trevas e triunfou, mas o equilíbrio da floresta ainda está frágil."</p>
+        <p>"Malakar foi destruído, mas sua influência permanece," disse o Espírito da Terra. "As cicatrizes que ele deixou na floresta não desaparecerão tão cedo."</p>
+        <p>Elias assentiu. Ele sabia que sua jornada não terminava com a derrota de Malakar. "O que eu preciso fazer agora?"</p>
+        <p>O Espírito do Ar respondeu: "Você deve continuar sendo o guardião. A floresta precisa de tempo para se curar, e sua presença será vital para proteger o equilíbrio recém-restaurado."</p>
+        <p>"Mas não se esqueça," acrescentou o Espírito do Fogo, "o poder que você carrega também é uma responsabilidade. Use-o com sabedoria, ou poderá causar mais dano do que Malakar jamais causou."</p>
+        <p>Elias sentiu a profundidade dessas palavras. Ele havia aprendido a importância do equilíbrio durante sua jornada, mas sabia que manter esse equilíbrio seria um desafio constante.</p>
+        <p>Enquanto os Espíritos começavam a desaparecer, Yara segurou sua mão. "Você não está sozinho nessa, Elias. A floresta confia em você, e eu também."</p>
+        <p>Ele olhou para o horizonte, onde o sol começava a nascer, banhando o vale com luz dourada. Pela primeira vez em muito tempo, ele sentiu esperança.</p>
+        <p>"A luta acabou," pensou ele, "mas a verdadeira tarefa está apenas começando."</p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo18.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo20.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 12</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "amazonico-o-protetor-da-floresta";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "defaultBook";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="amazonico-o-protetor-da-floresta">
+    <!-- Identificação do capítulo com classe "capitulo" e id "capitulo12" -->
+    <div class="container capitulo" id="capitulo12">
+        <h1 class="chapter-number">Capítulo 12</h1>
+        <h2 class="chapter-title">O Despertar do Espírito da Água</h2>
+        <p>A luz do sol refletia nas águas calmas do rio, criando um espetáculo de cores enquanto Elias e Yara avançavam pelo território dos rios profundos. As árvores altas que cercavam o caminho pareciam sussurrar, como se estivessem ansiosas pelo que estava por vir.</p>
+        <p>"O Espírito da Água repousa aqui," disse Yara, sua voz baixa e cheia de reverência. "Mas ele não acordará facilmente. Seu poder é antigo e desconfiado."</p>
+        <p>Elias observou o rio à sua frente. Ele sentiu a energia no ar, um pulsar que parecia acompanhar o ritmo das águas. "O que precisamos fazer para despertá-lo?"</p>
+        <p>"A conexão com a água deve ser absoluta," explicou Yara. "Você deve provar que é digno, que não busca poder, mas equilíbrio."</p>
+        <p>Elias assentiu. Ele se aproximou do rio, ajoelhando-se na margem. Quando mergulhou as mãos na água, um frio intenso percorreu seu corpo, mas ele manteve a calma, fechando os olhos e se concentrando na energia ao seu redor.</p>
+        <p>De repente, o rio começou a se agitar. Ondas surgiram do nada, e uma figura emergiu do centro da água. O Espírito da Água tinha uma forma fluida, translúcida, com olhos brilhantes como safiras e uma voz que ecoava como o som de cachoeiras.</p>
+        <p>"Quem ousa perturbar meu descanso?" perguntou o Espírito, sua presença impondo respeito e um leve temor.</p>
+        <p>Elias se levantou, enfrentando o Espírito. "Eu sou Elias, o Protetor da Floresta. Venho pedir sua ajuda para restaurar o equilíbrio e deter Malakar antes que ele destrua tudo."</p>
+        <p>O Espírito da Água o estudou por um momento antes de responder: "Muitos clamaram ser dignos, mas poucos entenderam o verdadeiro significado do equilíbrio. Você deve provar seu valor."</p>
+        <p>Antes que Elias pudesse responder, o Espírito ergueu as mãos, e uma coluna de água o envolveu. Ele foi lançado para o fundo do rio, onde se viu cercado por correntes que pareciam vivas, tentando aprisioná-lo.</p>
+        <p>"Lembre-se, Elias," a voz do Espírito ecoou em sua mente, "a água não luta contra o fluxo. Ela se adapta, se molda e vence pela persistência."</p>
+        <p>Elias fechou os olhos, sentindo a pressão ao seu redor. Em vez de resistir, ele relaxou, permitindo que a água o carregasse. Ele se tornou parte do fluxo, movendo-se com as correntes em vez de lutar contra elas.</p>
+        <p>Quando abriu os olhos novamente, estava de volta à superfície, diante do Espírito da Água. O Espírito sorriu levemente. "Você entende o equilíbrio. Eu o ajudarei, Protetor."</p>
+        <p>Uma onda de energia passou por Elias, fortalecendo sua conexão com a floresta. O Espírito da Água desapareceu nas profundezas, mas sua presença permaneceu, agora ligada a Elias.</p>
+        <p>Yara se aproximou, sorrindo. "Você conseguiu. Mas ainda há outros Espíritos a despertar. Vamos continuar."</p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo11.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo13.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>

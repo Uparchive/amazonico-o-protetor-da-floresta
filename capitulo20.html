@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 20</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "amazonico-o-protetor-da-floresta";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "defaultBook";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="amazonico-o-protetor-da-floresta">
+    <!-- Identificação do capítulo com classe "capitulo" e id "capitulo20" -->
+    <div class="container capitulo" id="capitulo20">
+        <h1 class="chapter-number">Capítulo 20</h1>
+        <h2 class="chapter-title">Reconstruindo o Equilíbrio</h2>
+        <p>O sol iluminava a floresta como uma promessa de renovação. Elias caminhava pelo vale que antes abrigava o Coração das Sombras. Agora, o lugar começava a mostrar sinais de recuperação. Pequenas plantas cresciam onde antes havia apenas escuridão, e os animais, lentamente, retornavam às suas casas.</p>
+        <p>Yara estava ao seu lado, ajudando a reunir os habitantes da floresta. Jaguatiricas, macacos, araras e outros animais vinham como aliados, enquanto as raízes e folhas pareciam responder aos movimentos de Elias. A floresta reconhecia seu Protetor.</p>
+        <p>"A floresta está viva," disse Yara, sorrindo. "Ela responde à sua presença."</p>
+        <p>Os Espíritos, embora invisíveis, ainda estavam conectados a Elias. Ele podia sentir suas energias, guiando-o nos próximos passos. "<b>O equilíbrio não é algo que se conquista uma vez e pronto</b>," pensou ele. "<b>É algo que precisa ser mantido todos os dias.</b>"</p>
+        <p>Enquanto Elias plantava sementes e fortalecia as árvores ao seu redor, os moradores da aldeia de <b>Iaraçu</b> começaram a aparecer. Primeiro, apenas alguns curiosos. Depois, grupos inteiros. Eles traziam histórias de destruição, mas também de esperança, pois haviam sentido a mudança na energia da floresta.</p>
+        <p>"Protetor," disse um ancião da aldeia, sua voz trêmula, mas cheia de respeito. "Você enfrentou a escuridão e trouxe a luz de volta. Como podemos ajudá-lo?"</p>
+        <p>Elias olhou para eles, percebendo que não poderia carregar o fardo sozinho. "A floresta pertence a todos nós," disse ele. "Se quisermos protegê-la, precisamos trabalhar juntos. Cada um de vocês pode ser uma parte desse equilíbrio."</p>
+        <p>A ideia foi recebida com entusiasmo. Os aldeões começaram a ajudar, plantando árvores, limpando áreas devastadas e construindo um vínculo renovado com a floresta. Elias sentiu a esperança crescer como as novas sementes que plantavam.</p>
+        <p>Ao final do dia, Yara se aproximou de Elias enquanto ele observava o horizonte. "Você fez muito hoje, mas ainda há um longo caminho pela frente."</p>
+        <p>Elias assentiu. "A floresta precisa de nós. E nós precisamos dela."</p>
+        <p>Com isso, eles se prepararam para o que viria a seguir. A batalha havia terminado, mas a verdadeira jornada de Elias como Protetor estava apenas começando.</p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo19.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo21.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>

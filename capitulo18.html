@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 18</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "amazonico-o-protetor-da-floresta";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "defaultBook";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="amazonico-o-protetor-da-floresta">
+    <!-- Identificação do capítulo com classe "capitulo" e id "capitulo18" -->
+    <div class="container capitulo" id="capitulo18">
+        <h1 class="chapter-number">Capítulo 18</h1>
+        <h2 class="chapter-title">A Batalha Começa</h2>
+        <p>O silêncio no Coração das Sombras era esmagador, quebrado apenas pelo som da respiração pesada de Elias e pelo pulsar da energia sombria que emanava de Malakar. O confronto final estava prestes a começar.</p>
+        <p>"Você está sozinho, Protetor," zombou Malakar, estendendo os braços. "A floresta já está morrendo, e seus Espíritos não podem me deter."</p>
+        <p>Elias sentiu a presença dos Espíritos ao seu redor, suas vozes encorajando-o em sua mente. "<b>Você não está sozinho, Elias. Use o que lhe ensinamos. Confie em si mesmo e na floresta.</b>"</p>
+        <p>Com um movimento, Malakar lançou uma onda de energia negra em direção a Elias. Ele ergueu as mãos, chamando a força dos Espíritos. A Água emergiu, formando um escudo que dissipou a energia, enquanto o Fogo respondeu com uma explosão que obrigou Malakar a recuar.</p>
+        <p>"Impressionante," disse Malakar, seus olhos brilhando com um ódio intenso. "Mas você está apenas adiando o inevitável."</p>
+        <p>Ele ergueu as mãos novamente, e o chão sob Elias começou a se partir, criando fendas que tentavam engoli-lo. Elias invocou o poder da Terra, estabilizando o solo enquanto o Ar o elevava acima das fendas.</p>
+        <p>"Você não entende, Malakar," disse Elias, sua voz firme. "A força da floresta não está apenas nos Espíritos, mas em todos que a protegem. Você nunca poderá destruí-la."</p>
+        <p>Malakar rugiu, sua aura se expandindo como uma tempestade. Ele avançou, e a batalha se tornou um turbilhão de luz e escuridão, cada golpe ressoando como trovões pelo vale. Elias combinava os elementos com precisão, mantendo-se firme contra os ataques implacáveis de Malakar.</p>
+        <p>Yara, observando de longe, usava seus próprios poderes para conter as criaturas sombrias que ainda emergiam da névoa, garantindo que Elias pudesse se concentrar totalmente no confronto.</p>
+        <p>Finalmente, em um momento de clareza, Elias percebeu o ponto fraco de Malakar. Sua energia vinha de uma conexão com a própria escuridão, mas essa conexão também o tornava vulnerável à luz. Elias sabia o que precisava fazer.</p>
+        <p>Ele invocou os Espíritos, concentrando toda a energia que havia acumulado. A luz ao seu redor brilhou com uma intensidade que fez Malakar hesitar. "<b>Espíritos da floresta, me deem força para restaurar o equilíbrio!</b>"</p>
+        <p>Com um grito final, Elias lançou um feixe de energia pura diretamente no centro de Malakar, que foi consumido pela luz. A escuridão ao redor começou a desaparecer, e o vale foi preenchido por uma calma inesperada.</p>
+        <p>Malakar caiu de joelhos, sua forma começando a se desintegrar. "Você... não pode vencer," sussurrou ele antes de desaparecer completamente, deixando apenas silêncio e um leve brilho onde ele estava.</p>
+        <p>Elias caiu de joelhos, exausto, mas sabia que a batalha ainda não estava completamente ganha. A floresta ainda precisava de tempo para se curar, e seu papel como Protetor estava apenas começando.</p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo17.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo19.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>

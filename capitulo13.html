@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 13</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "amazonico-o-protetor-da-floresta";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "defaultBook";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="amazonico-o-protetor-da-floresta">
+    <!-- Identificação do capítulo com classe "capitulo" e id "capitulo13" -->
+    <div class="container capitulo" id="capitulo13">
+        <h1 class="chapter-number">Capítulo 13</h1>
+        <h2 class="chapter-title">O Chamado do Espírito do Ar</h2>
+        <p>Deixando os rios profundos para trás, Elias e Yara avançaram para as montanhas baixas que marcavam o início do território do Espírito do Ar. A jornada era árdua, mas o céu limpo e os ventos constantes pareciam indicar que estavam no caminho certo.</p>
+        <p>"O Espírito do Ar é conhecido por testar não apenas a força, mas também a sabedoria," explicou Yara, enquanto subiam uma trilha sinuosa. "Ele valoriza a liberdade e a clareza de propósito."</p>
+        <p>Elias olhou para o horizonte. O vento parecia brincar com seu cabelo, carregando um sussurro quase imperceptível. "Eu sinto que ele já sabe que estamos vindo."</p>
+        <p>Ao chegar ao topo de um penhasco, eles foram recebidos por um redemoinho de vento que levantava folhas e poeira ao redor. No centro, uma figura esguia e translúcida começou a se formar. O Espírito do Ar tinha uma aparência etérea, com asas de vento que pareciam feitas de névoa e olhos brilhantes como o céu ao amanhecer.</p>
+        <p>"Por que você me busca, Protetor?" perguntou o Espírito, sua voz flutuando como uma brisa.</p>
+        <p>Elias deu um passo à frente. "Eu preciso de sua ajuda para restaurar o equilíbrio da floresta e impedir Malakar de destruir tudo."</p>
+        <p>O Espírito o observou atentamente. "A liberdade que você busca é nobre, mas o ar não pode ser contido. Você deve provar que é capaz de entender o verdadeiro significado de seguir o vento."</p>
+        <p>Com um gesto, o Espírito ergueu Elias no ar, lançando-o em um redemoinho. Ele foi jogado para cima, as rajadas de vento o empurrando em todas as direções. Por um momento, ele sentiu pânico, mas então lembrou-se das palavras de Yara. Ele precisava se concentrar.</p>
+        <p>Elias fechou os olhos e relaxou, permitindo que o vento o guiasse. Ele deixou de lutar contra as rajadas e começou a flutuar com elas, sentindo-se parte do ar ao seu redor. Quando abriu os olhos, estava de volta ao penhasco, pousando suavemente.</p>
+        <p>O Espírito do Ar sorriu. "Você entende, Protetor. O vento não é um inimigo. Ele é um guia, e aqueles que confiam nele podem alcançar alturas inimagináveis."</p>
+        <p>Uma brisa suave passou por Elias, preenchendo-o com uma nova energia. Ele sentiu sua conexão com o ar fortalecer, como se pudesse ouvir os segredos sussurrados pelo vento.</p>
+        <p>"Eu ajudarei você," disse o Espírito, enquanto sua forma começava a se dissipar. "Mas lembre-se, Elias: a verdadeira força vem de aceitar o fluxo da vida, não de controlá-lo."</p>
+        <p>Yara colocou a mão no ombro de Elias. "Dois Espíritos despertados. Estamos mais próximos, mas ainda há um longo caminho pela frente."</p>
+        <p>Elias assentiu, olhando para o céu. "Vamos continuar."</p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo12.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo14.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>

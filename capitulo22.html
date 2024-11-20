@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 22</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "amazonico-o-protetor-da-floresta";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "defaultBook";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="amazonico-o-protetor-da-floresta">
+    <!-- Identificação do capítulo com classe "capitulo" e id "capitulo22" -->
+    <div class="container capitulo" id="capitulo22">
+        <h1 class="chapter-number">Capítulo 22</h1>
+        <h2 class="chapter-title">A Primeira Grande Decisão</h2>
+        <p>Os dias seguintes à despedida de Jorge foram um misto de trabalho e reflexão para Elias. A aldeia de <b>Iaraçu</b> estava agora mais unida do que nunca, mas a responsabilidade de liderar pesava sobre os ombros do jovem Protetor.</p>
+        <p>Yara o encontrou ao amanhecer, sentado sob a Árvore Ancestral, sua expressão cheia de pensamentos. "Você não pode carregar tudo sozinho, Elias," disse ela, sentando-se ao lado dele.</p>
+        <p>"Eu sei," respondeu ele, olhando para as folhas que dançavam ao vento. "Mas às vezes parece que a floresta depende inteiramente de mim. O que acontece se eu falhar?"</p>
+        <p>Yara sorriu levemente. "Você não está sozinho, lembra? Os Espíritos, a aldeia, até eu... todos estamos com você."</p>
+        <p>Elias suspirou, mas antes que pudesse responder, uma figura surgiu entre as árvores. Era um jovem aldeão, apressado, com preocupação evidente no rosto. "Elias! Precisamos da sua ajuda na clareira leste. Algo está errado com o rio."</p>
+        <p>Sem hesitar, Elias se levantou. "Mostre o caminho."</p>
+        <p>Na clareira leste, o rio que antes fluía forte estava quase seco. Os peixes lutavam por oxigênio, e as plantas ao redor estavam murchando. Elias tocou a água, sentindo uma energia estranha que não pertencia à floresta.</p>
+        <p>"Malakar pode estar morto, mas os danos que ele causou ainda estão aqui," disse Yara, observando a cena. "Precisamos agir rapidamente."</p>
+        <p>Elias fechou os olhos, chamando o Espírito da Água. Uma brisa fresca trouxe a presença etérea do Espírito, que falou: "O fluxo foi interrompido por algo além do natural. Você deve buscar a fonte da interrupção e restaurar o equilíbrio."</p>
+        <p>Com determinação renovada, Elias liderou um grupo de aldeões para investigar a montante do rio. Eles encontraram uma barragem de pedras negras, claramente deixada por forças sombrias. O grupo trabalhou em harmonia para desmontá-la, enquanto Elias canalizava a energia dos Espíritos para purificar a água contaminada.</p>
+        <p>Quando o rio voltou a fluir, uma onda de alívio percorreu o grupo. "Você está realmente conectado à floresta, Elias," disse um dos aldeões, com admiração. "Jorge teria orgulho."</p>
+        <p>Ao anoitecer, enquanto a aldeia celebrava a restauração do rio, Elias olhou para Yara. "Essa foi apenas uma pequena vitória. Há muito a ser feito."</p>
+        <p>Yara assentiu. "Sim, mas cada passo importa. E você acabou de dar um importante."</p>
+        <p>Elias sorriu, sabendo que o caminho à frente seria longo, mas que ele estava pronto para enfrentá-lo — com a floresta, a aldeia e os Espíritos ao seu lado.</p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo21.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo23.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>

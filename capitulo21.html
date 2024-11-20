@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 21</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "amazonico-o-protetor-da-floresta";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "defaultBook";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="amazonico-o-protetor-da-floresta">
+    <!-- Identificação do capítulo com classe "capitulo" e id "capitulo21" -->
+    <div class="container capitulo" id="capitulo21">
+        <h1 class="chapter-number">Capítulo 21</h1>
+        <h2 class="chapter-title">Adeus, Vovô</h2>
+        <p>A luz do amanhecer iluminava a aldeia de <b>Iaraçu</b>, mas o clima estava sombrio. O avô de Elias, o homem que o havia guiado e ensinado desde pequeno, repousava em sua rede, cercado pelos moradores da aldeia.</p>
+        <p>Elias se aproximou lentamente, sentindo um peso no peito que parecia maior do que qualquer batalha que já enfrentara. O avô, com um sorriso fraco, levantou o olhar para ele. "Você voltou, meu menino," disse ele, a voz fraca, mas cheia de carinho.</p>
+        <p>Elias segurou a mão dele, sentindo a fragilidade que agora dominava aquele homem antes tão forte. "Eu voltei, Vovô. A floresta está segura. Fizemos isso juntos."</p>
+        <p>O avô assentiu, fechando os olhos por um momento. "Eu sabia que você conseguiria. A floresta sempre escolhe bem... e eu sabia que você era digno."</p>
+        <p>Yara estava ao lado de Elias, observando em silêncio. Os aldeões também ficaram em silêncio, respeitando o momento. As árvores ao redor pareciam curvar seus galhos, como se a própria floresta lamentasse a partida iminente de um de seus guardiões mais antigos.</p>
+        <p>"Elias," disse o avô, com dificuldade. "Prometa-me que continuará protegendo tudo isso. A floresta, a aldeia, o equilíbrio. Prometa que continuará lutando."</p>
+        <p>Lágrimas escorreram pelo rosto de Elias, mas ele segurou a mão do avô com firmeza. "Eu prometo, Vovô. Sempre."</p>
+        <p>O ancião sorriu uma última vez antes de fechar os olhos, seu corpo relaxando enquanto sua alma parecia se fundir com a floresta que ele tanto amava. O silêncio foi quebrado apenas pelo som do vento passando pelas folhas, um sussurro que parecia uma despedida.</p>
+        <p>Elias ficou ali por um longo tempo, segurando a mão do avô, enquanto Yara e os aldeões preparavam uma cerimônia para honrar sua vida. Eles construíram uma pira de madeira no centro da aldeia, decorada com flores e folhas, um tributo ao homem que havia dedicado sua vida à floresta.</p>
+        <p>Quando a chama foi acesa, Elias sentiu um misto de tristeza e gratidão. "Descanse em paz, Vovô," ele sussurrou. "Eu cuidarei de tudo."</p>
+        <p>Enquanto as chamas subiam ao céu, Elias sentiu uma nova determinação crescer dentro dele. O legado de seu avô viveria através dele, e ele honraria a promessa que havia feito.</p>
+        <p>Antes de se afastar, ele murmurou com carinho, quase como uma prece: "Adeus, <b>Vovô Jorge</b>. Obrigado por tudo."</p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo20.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo22.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 11</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "amazonico-o-protetor-da-floresta";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "defaultBook";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="amazonico-o-protetor-da-floresta">
+    <!-- Identificação do capítulo com classe "capitulo" e id "capitulo11" -->
+    <div class="container capitulo" id="capitulo11">
+        <h1 class="chapter-number">Capítulo 11</h1>
+        <h2 class="chapter-title">Preparativos para a Última Batalha</h2>
+        <p>O silêncio que se seguiu à retirada de Malakar foi esmagador. Elias se levantou com dificuldade, ainda sentindo a energia da Árvore da Vida pulsar dentro dele. Ele sabia que aquela vitória não era definitiva e que o verdadeiro teste estava por vir.</p>
+        <p>"O que fazemos agora?" perguntou Yara, enquanto olhava para a floresta ao redor, ainda se recuperando da batalha.</p>
+        <p>Elias respirou fundo. "Precisamos nos preparar. Malakar é poderoso demais para ser enfrentado diretamente. Devemos reunir todos os aliados da floresta."</p>
+        <p>A voz da Árvore ecoou em suas mentes: "<b>Existem outros que podem ajudá-lo, Protetor. Os Espíritos Ancestrais da floresta ainda vivem, mas estão adormecidos. Você deve despertá-los.</b>"</p>
+        <p>Elias sentiu um novo propósito. "Onde posso encontrá-los?"</p>
+        <p>"Espalhados pela floresta," continuou a Árvore. "<b>Cada um guarda um fragmento do equilíbrio que você precisará para derrotar Malakar. Encontre o Espírito do Ar, o Espírito do Fogo e o Espírito da Terra. Somente com todos ao seu lado você terá uma chance."</b>"</p>
+        <p>Yara assentiu, seu rosto sério. "Eu posso ajudá-lo a encontrar o Espírito da Água. Ele é o mais próximo, e meu vínculo com os rios pode nos guiar até ele."</p>
+        <p>Elias olhou para o horizonte, onde o céu começava a se iluminar novamente. "Não temos tempo a perder. Vamos começar."</p>
+        <p>Enquanto eles se preparavam para partir, um pequeno grupo de animais da floresta se aproximou — jaguatiricas, araras e até mesmo um pequeno bando de macacos. Eles pareciam dispostos a seguir Elias, como se reconhecessem nele o papel de Protetor.</p>
+        <p>"Não estamos sozinhos," disse Elias, com um leve sorriso. "A floresta está conosco."</p>
+        <p>Com isso, eles partiram, deixando a Árvore da Vida protegida por suas próprias raízes. O caminho à frente seria difícil, mas Elias sabia que cada passo o levava mais perto de restaurar o equilíbrio e derrotar Malakar de uma vez por todas.</p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo10.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo12.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>

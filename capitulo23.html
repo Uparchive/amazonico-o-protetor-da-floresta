@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 23</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "amazonico-o-protetor-da-floresta";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "defaultBook";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="amazonico-o-protetor-da-floresta">
+    <!-- Identificação do capítulo com classe "capitulo" e id "capitulo23" -->
+    <div class="container capitulo" id="capitulo23">
+        <h1 class="chapter-number">Capítulo 23</h1>
+        <h2 class="chapter-title">Os Sussurros do Futuro</h2>
+        <p>Depois de restaurar o fluxo do rio, Elias sentiu uma nova onda de responsabilidade. O equilíbrio havia sido parcialmente restaurado, mas a floresta continuava mostrando sinais de que sua luta estava longe de acabar. Cada passo parecia trazer novos desafios e mistérios.</p>
+        <p>No fim da tarde, enquanto caminhava sozinho pela trilha que levava à clareira da Árvore Ancestral, Elias ouviu um som suave, quase imperceptível. Ele parou e concentrou-se, percebendo que vinha do próprio solo. As raízes vibravam, emitindo um sussurro que parecia carregado de significado.</p>
+        <p>Ele ajoelhou-se, colocando as mãos no chão, e fechou os olhos. A energia da floresta o envolveu, e as visões vieram em flashes. Ele viu um grande desmatamento se aproximando, máquinas destruindo tudo em seu caminho. Mas também viu rostos — os aldeões de <b>Iaraçu</b> e além — lutando juntos, unidos pela causa da preservação.</p>
+        <p>Yara o encontrou logo depois, sua expressão preocupada. "Você está bem, Elias? Senti algo diferente no ar."</p>
+        <p>"A floresta está tentando me mostrar o que está por vir," respondeu ele, ainda com os olhos fechados. "Haverá mais destruição, mas também mais esperança. Nós temos que nos preparar."</p>
+        <p>Yara assentiu. "Os aldeões confiam em você. Eles estão prontos para ajudar no que for preciso."</p>
+        <p>Elias abriu os olhos, determinado. "Então, vamos começar a preparar a floresta e as pessoas. Precisamos fortalecer nossa conexão com a terra, a água, o ar e o fogo. Cada ser vivo deve ser parte deste equilíbrio."</p>
+        <p>Nos dias que se seguiram, Elias e Yara lideraram uma série de iniciativas para educar os moradores. Ensinaram sobre preservação, plantaram novas árvores e reforçaram as defesas naturais da floresta. Com a ajuda dos Espíritos, a floresta começou a reagir rapidamente, mostrando sinais de recuperação.</p>
+        <p>Enquanto isso, os Espíritos de Água, Terra, Ar e Fogo continuavam guiando Elias, oferecendo conselhos e força nos momentos de maior dúvida. "<b>Lembre-se, Elias</b>," disse o Espírito da Terra durante uma noite calma, "<b>a luta pelo equilíbrio é eterna, mas você não está sozinho. A floresta confia em você, e você pode confiar nela.</b>"</p>
+        <p>Ao final do capítulo, Elias subiu até uma colina onde podia ver toda a extensão da floresta. Ele observou as luzes das fogueiras dos aldeões espalhadas ao longo da floresta e sentiu uma profunda conexão com tudo à sua volta. "Estamos prontos," ele sussurrou. "Juntos, enfrentaremos qualquer desafio."</p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo22.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo24.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>

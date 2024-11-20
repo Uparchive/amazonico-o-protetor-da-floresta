@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 15</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "amazonico-o-protetor-da-floresta";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "defaultBook";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="amazonico-o-protetor-da-floresta">
+    <!-- Identificação do capítulo com classe "capitulo" e id "capitulo15" -->
+    <div class="container capitulo" id="capitulo15">
+        <h1 class="chapter-number">Capítulo 15</h1>
+        <h2 class="chapter-title">O Julgamento do Espírito do Fogo</h2>
+        <p>A jornada de Elias e Yara os levou a um terreno árido, onde o calor intenso fazia o ar tremular. Este era o domínio do Espírito do Fogo, um lugar onde a vegetação era escassa e o solo era negro, marcado por antigas erupções vulcânicas.</p>
+        <p>"O Espírito do Fogo é impetuoso," alertou Yara. "Ele representa a transformação, mas também a destruição. Você deve mostrar que sabe como usar o poder sem deixar que ele o consuma."</p>
+        <p>Elias sentiu o peso dessas palavras enquanto avançava. Ao chegar ao centro de uma cratera fumegante, uma explosão de chamas irrompeu diante dele. Do fogo emergiu o Espírito do Fogo, uma figura brilhante e poderosa, com olhos que ardiam como brasas e um corpo que parecia ser feito de magma em constante movimento.</p>
+        <p>"Protetor," disse o Espírito, sua voz como o rugido de um incêndio. "Você busca meu poder, mas sabe o que ele significa? O fogo pode criar, mas também destruir. Mostre-me que você é digno."</p>
+        <p>Com um gesto, o Espírito lançou uma labareda em direção a Elias. Ele rolou para o lado, mas o calor era avassalador. Elias percebeu que o Espírito não queria apenas testar sua resistência física, mas também sua habilidade de controlar suas emoções.</p>
+        <p>"Não lute contra o fogo," disse Yara de longe. "Aprenda com ele."</p>
+        <p>Elias fechou os olhos e tentou se concentrar. Ele sentiu o calor ao seu redor, mas também percebeu que o fogo tinha um ritmo, uma energia pulsante. Ele estendeu as mãos, não para repelir as chamas, mas para se conectar a elas.</p>
+        <p>As labaredas começaram a dançar ao seu redor, como se reconhecessem sua intenção. O Espírito do Fogo observou com interesse enquanto Elias moldava as chamas em formas delicadas, criando um círculo de fogo que não queimava, mas iluminava.</p>
+        <p>"Você entende," disse o Espírito. "O fogo não é apenas destruição. É uma ferramenta, um renascimento. Mas lembre-se, Protetor, de usá-lo com sabedoria, ou ele consumirá tudo, incluindo você."</p>
+        <p>Uma onda de calor envolveu Elias, preenchendo-o com uma nova energia. Ele sentiu sua conexão com o fogo fortalecer, como uma chama que agora ardia dentro dele, mas que ele podia controlar.</p>
+        <p>Yara sorriu. "Quatro Espíritos despertados. Você está mais perto do que nunca, Elias. A floresta tem uma chance."</p>
+        <p>Elias assentiu, sentindo a responsabilidade aumentar, mas também a confiança crescer. "Vamos terminar o que começamos."</p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo14.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo16.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>

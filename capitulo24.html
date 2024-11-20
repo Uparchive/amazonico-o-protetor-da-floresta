@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 24</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "amazonico-o-protetor-da-floresta";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "defaultBook";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="amazonico-o-protetor-da-floresta">
+    <!-- Identificação do capítulo com classe "capitulo" e id "capitulo24" -->
+    <div class="container capitulo" id="capitulo24">
+        <h1 class="chapter-number">Capítulo 24</h1>
+        <h2 class="chapter-title">O Alvorecer da Resistência</h2>
+        <p>Os preparativos para enfrentar as ameaças iminentes estavam em andamento. Elias e Yara lideravam os esforços, não apenas restaurando a floresta, mas também unindo comunidades que viviam ao redor dela. As aldeias próximas começaram a enviar representantes, todos determinados a proteger o que restava da floresta.</p>
+        <p>"Nunca vimos tantas aldeias unidas," comentou Yara enquanto ajudava a organizar os grupos na clareira central. "A floresta é o elo que nos conecta."</p>
+        <p>Elias assentiu, observando os aldeões trabalharem juntos. "Eles entendem agora que a luta não é só minha, mas de todos nós."</p>
+        <p>Enquanto caminhava entre as pessoas, Elias encontrou uma jovem chamada <b>Naíra</b>, que havia viajado de uma aldeia distante. "Ouvi histórias sobre você," disse ela, seus olhos brilhando de determinação. "Se você pode proteger a floresta, então nós também podemos."</p>
+        <p>Essas palavras inspiraram Elias, mas também o fizeram refletir. Ele sabia que o verdadeiro desafio ainda estava por vir. Durante a noite, enquanto todos descansavam, ele subiu até a Árvore Ancestral e se conectou com os Espíritos.</p>
+        <p>"Vocês acham que estamos prontos?" perguntou ele em voz alta, sentindo a presença dos Espíritos ao seu redor.</p>
+        <p>O Espírito do Fogo respondeu primeiro, sua voz cheia de vigor. "<b>Pronto? Não completamente. Mas a força não está apenas na preparação, Elias. Está na coragem de enfrentar o que vier.</b>"</p>
+        <p>O Espírito da Água falou logo em seguida. "<b>A correnteza nunca para, mesmo diante de obstáculos. Siga o fluxo e confie em sua conexão com a floresta.</b>"</p>
+        <p>Elias respirou fundo, sentindo a energia dos Espíritos reforçar sua determinação. "Nós enfrentaremos o que for preciso."</p>
+        <p>No amanhecer do dia seguinte, os aldeões se reuniram na clareira, prontos para defender a floresta de qualquer ameaça. Elias subiu em um tronco caído para falar a todos.</p>
+        <p>"Hoje damos início a algo maior do que nós mesmos. Não é apenas a floresta que estamos protegendo, mas o equilíbrio de tudo o que nos dá vida. Juntos, somos mais fortes."</p>
+        <p>Uma onda de energia passou pelo grupo, e Elias soube que não estava sozinho. A resistência havia começado, e ele lideraria com o apoio da floresta, dos Espíritos e das pessoas que acreditavam no mesmo sonho.</p>
+        <p>Com isso, eles avançaram para preparar o próximo passo, enquanto o sol subia alto, iluminando um novo capítulo de esperança para a floresta.</p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo23.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo25.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>

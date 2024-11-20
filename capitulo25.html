@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 25</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "amazonico-o-protetor-da-floresta";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "defaultBook";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="amazonico-o-protetor-da-floresta">
+    <!-- Identificação do capítulo com classe "capitulo" e id "capitulo25" -->
+    <div class="container capitulo" id="capitulo25">
+        <h1 class="chapter-number">Capítulo 25</h1>
+        <h2 class="chapter-title">O Legado do Protetor</h2>
+        <p>A luz dourada do entardecer envolvia a floresta em um brilho sereno. Elias estava no alto de uma colina, observando o vasto tapete verde que se estendia até onde os olhos podiam ver. Este era o momento pelo qual havia trabalhado incansavelmente, o equilíbrio finalmente restabelecido.</p>
+        <p>Yara subiu até ele, carregando uma cesta cheia de sementes. "Eles estão esperando por você," disse ela com um sorriso. "A última cerimônia está prestes a começar."</p>
+        <p>Elias assentiu e a seguiu até a clareira central, onde aldeões, crianças e até os animais da floresta aguardavam. As árvores ao redor pareciam curvar-se levemente, como se estivessem honrando o momento. No centro, um círculo de pedras marcava o lugar onde a nova Árvore Ancestral seria plantada.</p>
+        <p>"Hoje," começou Elias, sua voz firme mas carregada de emoção, "nós damos início a um novo capítulo. Esta árvore será o símbolo do nosso compromisso com a floresta e com o equilíbrio que juramos proteger."</p>
+        <p>Ele ajoelhou-se e colocou uma pequena muda no solo, cobrindo-a cuidadosamente com terra. "Que esta árvore cresça forte e saudável, e que lembre a todos que a floresta vive em nós, assim como vivemos nela."</p>
+        <p>Os aldeões começaram a cantar uma melodia ancestral, suas vozes ecoando pela floresta como uma bênção. Os Espíritos, invisíveis mas presentes, adicionaram sua energia ao momento, fazendo o ar vibrar com uma sensação de unidade.</p>
+        <p>Ao final da cerimônia, Elias ficou sozinho diante da jovem árvore. Ele sentiu a mão de Yara em seu ombro. "Você fez mais do que qualquer um poderia imaginar, Elias. O legado do seu avô, da floresta, e de todos que vieram antes de você está seguro."</p>
+        <p>Elias olhou para o céu, onde as estrelas começavam a surgir. "Este é apenas o começo. O equilíbrio precisa ser mantido todos os dias, e nós continuaremos lutando por ele."</p>
+        <p>Com um último olhar para a árvore, Elias sentiu uma profunda paz. Ele sabia que o futuro da floresta estava nas mãos de todos aqueles que acreditavam na sua causa — e ele estaria lá, sempre guiando como o Protetor da Floresta Amazônica.</p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo24.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('fim.html')">Fim</button>
+        </div>
+    </div>
+</body>
+</html>

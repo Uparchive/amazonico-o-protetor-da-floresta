@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 14</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "amazonico-o-protetor-da-floresta";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "defaultBook";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="amazonico-o-protetor-da-floresta">
+    <!-- Identificação do capítulo com classe "capitulo" e id "capitulo14" -->
+    <div class="container capitulo" id="capitulo14">
+        <h1 class="chapter-number">Capítulo 14</h1>
+        <h2 class="chapter-title">A Força do Espírito da Terra</h2>
+        <p>Após deixar o território do Espírito do Ar, Elias e Yara se encontraram em uma floresta densa e antiga. As árvores ali eram mais grossas e altas do que em qualquer outro lugar, e suas raízes se entrelaçavam como se fossem guardiãs de um segredo profundo.</p>
+        <p>"O Espírito da Terra repousa aqui," disse Yara. "Ele é o mais poderoso dos Espíritos Ancestrais, mas também o mais difícil de convencer. Sua força é imensa, mas ele só a concede a quem entende o peso de suas responsabilidades."</p>
+        <p>Elias respirou fundo, sentindo a gravidade do momento. Ele caminhou em silêncio até o centro da clareira, onde um grande monólito de pedra se erguia. De repente, o chão começou a tremer, e o monólito se dividiu em várias partes, revelando uma figura colossal.</p>
+        <p>O Espírito da Terra era imenso, com um corpo feito de rochas e raízes. Seus olhos brilhavam com uma luz dourada, e sua presença era tão poderosa que Elias sentiu seus joelhos enfraquecerem.</p>
+        <p>"Você ousa me buscar, Protetor?" disse o Espírito, sua voz reverberando como um terremoto. "A força da terra é eterna, mas ela não deve ser usada levianamente. Por que você merece minha ajuda?"</p>
+        <p>Elias olhou para cima, encarando a figura imponente. "Porque eu não busco poder para mim mesmo. A floresta está em perigo, e eu preciso da sua força para protegê-la. Não sou nada sem os outros Espíritos e sem a conexão com a natureza."</p>
+        <p>O Espírito da Terra observou Elias por um momento antes de responder: "Palavras são fáceis. Prove que você entende o verdadeiro peso da terra."</p>
+        <p>Com isso, o Espírito bateu no chão, e Elias foi subitamente envolvido por raízes que o arrastaram para um túnel subterrâneo. Ele se encontrou em uma caverna escura, cercado por pedras e raízes que pareciam vivas.</p>
+        <p>A voz do Espírito ecoou na caverna. "A terra não é apenas força, mas também paciência. Ela suporta o peso de tudo, mas nunca desiste. Mostre-me que você pode carregar esse fardo."</p>
+        <p>Elias percebeu que uma grande rocha bloqueava sua saída. Ele tentou empurrá-la, mas era pesada demais. Suas mãos ficaram cobertas de poeira, mas ele não desistiu. Ele lembrou-se das palavras do Espírito: paciência e persistência.</p>
+        <p>Em vez de tentar forçar a rocha, Elias começou a trabalhar com as raízes ao redor, usando sua conexão com a floresta para pedir ajuda. As raízes se moveram lentamente, envolvendo a rocha e ajudando-o a movê-la.</p>
+        <p>Quando finalmente conseguiu abrir o caminho, ele emergiu de volta à clareira, onde o Espírito da Terra o aguardava. "Você entende," disse o Espírito. "A força não está em tentar carregar tudo sozinho, mas em trabalhar em harmonia com o mundo ao seu redor."</p>
+        <p>Uma onda de energia dourada envolveu Elias, fortalecendo sua conexão com a terra. Ele sentiu uma nova força, como se pudesse mover montanhas.</p>
+        <p>"Eu o ajudarei, Protetor," disse o Espírito da Terra. "Mas lembre-se: a verdadeira força vem da resiliência e do trabalho em conjunto."</p>
+        <p>Yara sorriu enquanto observava Elias. "Três Espíritos despertados. Estamos quase lá, Elias. A floresta está contando com você."</p>
+        <p>Elias assentiu, determinado a continuar sua jornada. "Vamos encontrar o próximo."</p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo13.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo15.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>

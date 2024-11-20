@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 17</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "amazonico-o-protetor-da-floresta";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "defaultBook";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="amazonico-o-protetor-da-floresta">
+    <!-- Identificação do capítulo com classe "capitulo" e id "capitulo17" -->
+    <div class="container capitulo" id="capitulo17">
+        <h1 class="chapter-number">Capítulo 17</h1>
+        <h2 class="chapter-title">A Marcha para a Escuridão</h2>
+        <p>Após a prova de harmonia com os Espíritos, Elias estava finalmente pronto para enfrentar Malakar. A Árvore da Vida havia lhe concedido um mapa em forma de visões, indicando o caminho para o Coração das Sombras, o refúgio de Malakar. A jornada seria perigosa, mas Elias não estava mais sozinho.</p>
+        <p>"Malakar está enfraquecido depois de sua última derrota," disse Yara enquanto caminhavam por uma trilha cercada por árvores retorcidas. "Mas ele usará a escuridão ao seu favor. Não podemos subestimá-lo."</p>
+        <p>Os Espíritos de Água, Terra, Ar e Fogo acompanhavam Elias como formas etéreas, silenciosos, mas atentos. Cada um estava pronto para intervir caso necessário, mas o confronto final dependeria do Protetor.</p>
+        <p>À medida que avançavam, o ambiente ao redor começou a mudar. O céu ficou mais escuro, como se o próprio sol estivesse sendo engolido pela escuridão. As árvores perderam suas folhas, e um frio sobrenatural tomou conta do ar.</p>
+        <p>De repente, o caminho foi bloqueado por criaturas grotescas feitas de sombra. Seus olhos brilhavam com uma luz carmesim, e elas avançaram sem hesitação. Elias levantou as mãos, canalizando a energia dos Espíritos.</p>
+        <p>"Lembrem-se," disse o Espírito do Ar, "use o que você aprendeu. Não lute contra a natureza delas, mas encontre seu equilíbrio."</p>
+        <p>Elias concentrou-se, permitindo que o poder dos Espíritos fluísse através dele. Ele usou a Água para conter os movimentos das criaturas, o Fogo para purificá-las, a Terra para reforçar o chão sob seus pés e o Ar para dissipar a escuridão. Um a um, os inimigos se desintegraram, deixando o caminho livre.</p>
+        <p>Yara sorriu levemente. "Você está pronto."</p>
+        <p>Eles continuaram, e logo chegaram ao Coração das Sombras, um vale profundo envolto por uma névoa negra. No centro, Malakar aguardava, sua presença irradiando poder e destruição. Ele estava maior e mais ameaçador do que antes, com uma aura que parecia consumir toda a luz ao seu redor.</p>
+        <p>"Então você veio, Protetor," disse Malakar, sua voz reverberando como um trovão distante. "Mas você está atrasado. O equilíbrio já foi rompido. Tudo o que resta é a escuridão."</p>
+        <p>Elias deu um passo à frente, sentindo a energia dos Espíritos fluindo dentro dele. "Você está errado, Malakar. A floresta ainda vive, e enquanto eu estiver aqui, você não vencerá."</p>
+        <p>Malakar riu, e sua risada ecoou pelo vale. "Veremos."</p>
+        <p>O confronto final estava prestes a começar.</p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo16.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo18.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>
